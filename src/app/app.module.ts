@@ -1,23 +1,34 @@
+import { CheckComponent } from './check.component';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 
+import { RouterModule, Routes } from '@angular/router';
 
 
 import { AppComponent } from './app.component';
 
-import { WebModule } from '../web/web.module';
+import { WebapiRouterModule } from '../webapi/router.module';
 
+
+
+const routes: Routes = [
+  { path: '', component:CheckComponent, pathMatch: 'full' },
+  
+  
+];
 
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,CheckComponent
   ],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
-    WebModule
+    
+    RouterModule.forRoot(routes),
+    WebapiRouterModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

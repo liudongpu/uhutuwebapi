@@ -2,29 +2,32 @@ import {NgModule} from '@angular/core';
 import {RouterModule, Routes} from '@angular/router';
 import {BrowserModule} from '@angular/platform-browser';
 
-
-
-import {MatButtonModule, MatButtonToggleModule,MatCheckboxModule,MatListModule,MatIconModule} from '@angular/material';
-
+import {MatButtonModule, MatButtonToggleModule, MatCheckboxModule, MatListModule, MatIconModule} from '@angular/material';
 
 import {LayoutMain} from './layout/main.component';
 
-
+import {BigList} from './big/list.component';
 
 const crisisCenterRoutes : Routes = [
   {
-    path: '',
-    component: LayoutMain
+    path: 'pages/webapi',
+    component: LayoutMain,
+    children: [
+      {
+        path: 'big/list',
+        component:BigList
+      }
+    ]
 
   }
 ];
 
 @NgModule({
-  declarations: [LayoutMain],
+  declarations: [LayoutMain,BigList],
   providers: [],
   entryComponents: [],
   imports: [
-    RouterModule.forRoot(crisisCenterRoutes),
+    RouterModule.forChild(crisisCenterRoutes),
     MatButtonModule,
     MatButtonToggleModule,
     MatIconModule,
@@ -32,4 +35,4 @@ const crisisCenterRoutes : Routes = [
   ],
   exports: [RouterModule]
 })
-export class WebModule {}
+export class WebapiRouterModule {}
