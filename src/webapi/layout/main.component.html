@@ -1,28 +1,33 @@
 
 
 <div class="theme_layout_main_header">
+
+
+    <mat-grid-list cols="4" rowHeight="50px">
+        <mat-grid-tile [colspan]="1" [rowspan]="2">logo</mat-grid-tile>
+        <mat-grid-tile [colspan]="3" [rowspan]="1"></mat-grid-tile>
+        <mat-grid-tile [colspan]="3" [rowspan]="1">
+
+            <nav mat-tab-nav-bar>
+                <a mat-tab-link
+                   *ngFor="let link of propHeaderNav"
+                   [routerLink]="link.path"
+                   routerLinkActive #rla="routerLinkActive"
+                   [active]="rla.isActive">
+                  {{link.label}}
+                </a>
+              </nav>
+        </mat-grid-tile>
+      </mat-grid-list>
+  
   
 </div>
 
-<mat-button-toggle-group #group="matButtonToggleGroup">
-  <mat-button-toggle value="left">
-    <mat-icon>format_align_left</mat-icon>
-  </mat-button-toggle>
-  <mat-button-toggle value="center">
-    <mat-icon>format_align_center</mat-icon>
-  </mat-button-toggle>
-  <mat-button-toggle value="right">
-    <mat-icon>format_align_right</mat-icon>
-  </mat-button-toggle>
-  <mat-button-toggle value="justify" disabled>
-    <mat-icon>format_align_justify</mat-icon>
-  </mat-button-toggle>
-</mat-button-toggle-group>
 
 
+<div class="theme_layout_main_center">
+        <router-outlet></router-outlet>
+        
+</div>
 
-<button mat-raised-button color="primary">Primary</button>
 
-
-
-<router-outlet></router-outlet>
