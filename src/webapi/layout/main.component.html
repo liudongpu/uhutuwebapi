@@ -1,33 +1,25 @@
+<div class="theme_layout_main">
+
+  <div class="theme_layout_main_header">
+
+    <div class="c_logo">
+      <mat-icon>home</mat-icon>
+    </div>
+    <div class="c_nav">
+      <nav>
+        <a mat-button *ngFor="let link of propHeaderNav" [routerLink]="link.path" routerLinkActive="active">
+          {{link.label}}
+        </a>
+      </nav>
+    </div>
+
+  </div>
 
 
-<div class="theme_layout_main_header">
 
+  <div class="theme_layout_main_center">
+    <router-outlet></router-outlet>
 
-    <mat-grid-list cols="4" rowHeight="50px">
-        <mat-grid-tile [colspan]="1" [rowspan]="2">logo</mat-grid-tile>
-        <mat-grid-tile [colspan]="3" [rowspan]="1"></mat-grid-tile>
-        <mat-grid-tile [colspan]="3" [rowspan]="1">
+  </div>
 
-            <nav mat-tab-nav-bar>
-                <a mat-tab-link
-                   *ngFor="let link of propHeaderNav"
-                   [routerLink]="link.path"
-                   routerLinkActive #rla="routerLinkActive"
-                   [active]="rla.isActive">
-                  {{link.label}}
-                </a>
-              </nav>
-        </mat-grid-tile>
-      </mat-grid-list>
-  
-  
 </div>
-
-
-
-<div class="theme_layout_main_center">
-        <router-outlet></router-outlet>
-        
-</div>
-
-

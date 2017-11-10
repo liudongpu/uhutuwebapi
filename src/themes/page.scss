@@ -1,14 +1,23 @@
+@import 'define.scss';
+
+
 .theme_page_big_list{
 
     display: flex;
 
     .c_left{
         width: 20%;
+        padding: 20px;
+        a{color: #333333;}
+        .active{
+            background-color: #A9C1D6;
+            color: #032D63;
+        }
     }
 
     .c_center{
-        flex:1;
-        padding-right: 3%;
+        padding:20px;
+        flex: 1;
     }
 
 
@@ -19,10 +28,12 @@
 
     ul{
         list-style-type: none;
+        padding: 0px;
+        margin: 0px;
         li{
             line-height: 30px;
             a{
-                background-color: #ccc;
+                background-color:$define_color_bg_primary;
                 display: block;
             }
         }

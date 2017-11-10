@@ -1,13 +1,33 @@
+@import 'define.scss';
+
+
+.theme_layout_main{
+    display: flex;
+    flex-direction:column;
+    
+}
 
 
 .theme_layout_main_header{
-    background: #c2e59c;  /* fallback for old browsers */
-    background: -webkit-linear-gradient(to right, #64b3f4, #c2e59c);  /* Chrome 10-25, Safari 5.1-6 */
-    background: linear-gradient(to right, #64b3f4, #c2e59c); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-    
-    min-height: 100px;
+    background: $define_header_bg_color; 
+    color:#fff;
+    line-height: 48px;
+    display: flex;
+    .c_logo{
+        flex:1;
+    }
+    .c_nav{
+        flex: 7;
+    }
+    a:hover{
+        color: #fff;
+    }
+
+    .active{
+        background-color: #032D63;
+    }
 }
 
 .theme_layout_center{
-    margin-top: 20px;
+    flex: 1;
 }

@@ -22,6 +22,10 @@ const crisisCenterRoutes : Routes = [
         component:BigList
       },
       {
+        path: 'list/:code',
+        component:BigList
+      },
+      {
         path:'big/front',
         component:BigFront
       },

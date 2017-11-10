@@ -1,46 +1,44 @@
 <div class="theme_layout_center">
-  <div class="theme_page_big_list">
-   
+  <div class="theme_page_big_list d-flex">
+
     <div class="c_left">
 
-      <ul>
-        <li *ngFor="let item of propDataNav" >
-           <a>{{item.apiName}}</a> 
+      <ul class="list-group">
+        <li *ngFor="let item of propDataNav">
+          <a mat-button [routerLink]="'../../list/'+item.code" routerLinkActive="active">{{item.apiName}}</a>
         </li>
       </ul>
-      
+
     </div>
     <div class="c_center">
-      <div >
+      <div>
         <mat-table #table [dataSource]="propDataSource">
-      
-          <!--- Note that these columns can be defined in any order.
-                The actual rendered columns are set as a property on the row definition" -->
-      
-          <!-- Position Column -->
-          <ng-container matColumnDef="apiName">
-            <mat-header-cell *matHeaderCellDef> 接口名称 </mat-header-cell>
-            <mat-cell *matCellDef="let element"> {{element.apiName}} </mat-cell>
-          </ng-container>
-      
-          <!-- Name Column -->
+
           <ng-container matColumnDef="apiClass">
             <mat-header-cell *matHeaderCellDef class="c_name">API函数</mat-header-cell>
             <mat-cell *matCellDef="let element" class="c_name"> {{element.apiClass}} </mat-cell>
           </ng-container>
 
+          <ng-container matColumnDef="apiName">
+            <mat-header-cell *matHeaderCellDef> 接口名称 </mat-header-cell>
+            <mat-cell *matCellDef="let element"> {{element.apiName}} </mat-cell>
+          </ng-container>
+
+
+
+
           <ng-container matColumnDef="remarkInfo">
             <mat-header-cell *matHeaderCellDef> 备注信息 </mat-header-cell>
             <mat-cell *matCellDef="let element"> {{element.remarkInfo}} </mat-cell>
           </ng-container>
-      
-           
-      
+
+
+
           <mat-header-row *matHeaderRowDef="propDisplayedColumns"></mat-header-row>
           <mat-row *matRowDef="let row; columns: propDisplayedColumns;"></mat-row>
         </mat-table>
       </div>
-      
+
 
     </div>
 
