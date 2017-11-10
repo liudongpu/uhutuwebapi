@@ -4,7 +4,7 @@ export class LayoutMain  {
 
      propHeaderNav=[
         {label:'首页',path:'/pages/webapi/big/front'},
-        {label:'列表',path:'/pages/webapi/big/list'}
+        {label:'列表',path:'/pages/webapi/list/list'}
     ];
   
 

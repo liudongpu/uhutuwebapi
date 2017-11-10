@@ -17,10 +17,7 @@ const crisisCenterRoutes : Routes = [
     path: 'pages/webapi',
     component: LayoutMain,
     children: [
-      {
-        path: 'big/list',
-        component:BigList
-      },
+      
       {
         path: 'list/:code',
         component:BigList

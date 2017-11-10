@@ -37,7 +37,7 @@ export class BigList implements OnInit {
 
 
       let sCode = params.get('code');
-      if (sCode) {
+      if (sCode && sCode != 'default') {
 
         if (this.propCurrentCode) {
           this.processSelct(sCode);
@@ -81,24 +81,13 @@ export class BigList implements OnInit {
       });
 
     let aArrNav = [];
-console.log(this.propMapGroup.get(''))
     this.propMapGroup.get('').forEach(fItem => {
-
-
-
       aArrNav = aArrNav.concat(this.propMapGroup.get(fItem.code));
-
-
-      
-
-
-
-
     });
 
 
-    aArrNav.forEach(fSub=>{
-      this.propMapGroup.get(fSub.code).forEach(fItem=>{
+    aArrNav.forEach(fSub => {
+      this.propMapGroup.get(fSub.code).forEach(fItem => {
         if (!fItem.spaceName) {
           fItem.apiClass = fSub.spaceName + '.' + fItem.apiClass;
         }
@@ -111,7 +100,7 @@ console.log(this.propMapGroup.get(''))
 
 
 
-    this.processSelct(this.propCurrentCode ? this.propCurrentCode : this.propDataNav[0].code);
+    this.processSelct(this.propCurrentCode);
 
   }
 
@@ -120,10 +109,19 @@ console.log(this.propMapGroup.get(''))
   processSelct(sSelect) {
 
 
-    let aArr =  this.propMapGroup.get(sSelect);
+    if (!(sSelect && this.propMapGroup.has(sSelect))) {
+
+      sSelect = this.propDataNav[0].code;
+    }
 
 
-    
+
+
+
+    let aArr = this.propMapGroup.get(sSelect);
+
+
+
 
 
 
