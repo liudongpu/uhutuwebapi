@@ -1,44 +1,49 @@
 <div class="theme_layout_center">
-  <mat-grid-list cols="10">
-    <mat-grid-tile></mat-grid-tile>
-    <mat-grid-tile [colspan]="8">
-            <div class="example-container mat-elevation-z8">
-                    <mat-table #table [dataSource]="dataSource">
-                  
-                      <!--- Note that these columns can be defined in any order.
-                            The actual rendered columns are set as a property on the row definition" -->
-                  
-                      <!-- Position Column -->
-                      <ng-container matColumnDef="position">
-                        <mat-header-cell *matHeaderCellDef> No. </mat-header-cell>
-                        <mat-cell *matCellDef="let element"> {{element.position}} </mat-cell>
-                      </ng-container>
-                  
-                      <!-- Name Column -->
-                      <ng-container matColumnDef="name">
-                        <mat-header-cell *matHeaderCellDef> Name </mat-header-cell>
-                        <mat-cell *matCellDef="let element"> {{element.name}} </mat-cell>
-                      </ng-container>
-                  
-                      <!-- Weight Column -->
-                      <ng-container matColumnDef="weight">
-                        <mat-header-cell *matHeaderCellDef> Weight </mat-header-cell>
-                        <mat-cell *matCellDef="let element"> {{element.weight}} </mat-cell>
-                      </ng-container>
-                  
-                      <!-- Color Column -->
-                      <ng-container matColumnDef="symbol">
-                        <mat-header-cell *matHeaderCellDef> Symbol </mat-header-cell>
-                        <mat-cell *matCellDef="let element"> {{element.symbol}} </mat-cell>
-                      </ng-container>
-                  
-                      <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
-                      <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
-                    </mat-table>
-                  </div>
+  <div class="theme_page_big_list">
+   
+    <div class="c_left">
 
-    </mat-grid-tile>
+      <ul>
+        <li *ngFor="let item of propDataNav" >
+           <a>{{item.apiName}}</a> 
+        </li>
+      </ul>
+      
+    </div>
+    <div class="c_center">
+      <div >
+        <mat-table #table [dataSource]="propDataSource">
+      
+          <!--- Note that these columns can be defined in any order.
+                The actual rendered columns are set as a property on the row definition" -->
+      
+          <!-- Position Column -->
+          <ng-container matColumnDef="apiName">
+            <mat-header-cell *matHeaderCellDef> 接口名称 </mat-header-cell>
+            <mat-cell *matCellDef="let element"> {{element.apiName}} </mat-cell>
+          </ng-container>
+      
+          <!-- Name Column -->
+          <ng-container matColumnDef="apiClass">
+            <mat-header-cell *matHeaderCellDef class="c_name">API函数</mat-header-cell>
+            <mat-cell *matCellDef="let element" class="c_name"> {{element.apiClass}} </mat-cell>
+          </ng-container>
 
-  </mat-grid-list>
+          <ng-container matColumnDef="remarkInfo">
+            <mat-header-cell *matHeaderCellDef> 备注信息 </mat-header-cell>
+            <mat-cell *matCellDef="let element"> {{element.remarkInfo}} </mat-cell>
+          </ng-container>
+      
+           
+      
+          <mat-header-row *matHeaderRowDef="propDisplayedColumns"></mat-header-row>
+          <mat-row *matRowDef="let row; columns: propDisplayedColumns;"></mat-row>
+        </mat-table>
+      </div>
+      
+
+    </div>
+
+  </div>
 
 </div>

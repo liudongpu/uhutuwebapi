@@ -11,7 +11,7 @@ export class ServiceHttp {
 
 
 
-    upPostData(sApiName:string,oInput:any):Promise<any>{
+    upPostData<T>(sApiName:string,oInput:any):Promise<T>{
 
 
         
@@ -22,13 +22,13 @@ export class ServiceHttp {
         
                 aData.push("apiInput=" +encodeURIComponent( JSON.stringify(oInput)));
 
-        let promise=new Promise((resolve,reject)=>{
+        let promise=new Promise<T>((resolve,reject)=>{
 
             this.httpClient.post('zoocs/web/api/manage',aData.join('&'),{headers:{
                 'Content-Type': 'application/x-www-form-urlencoded'
             }}).subscribe((data)=>{
-                
-                resolve(data);
+                let oResult:any=data;
+                resolve(oResult);
             });
         });
 
