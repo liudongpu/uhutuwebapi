@@ -4,7 +4,10 @@
     <div class="c_left">
 
       <ul class="list-group">
-        <li *ngFor="let item of propDataNav">
+        <li>
+          <a mat-button [routerLink]="'../../list/list'" routerLinkActive="active">全部接口</a>
+        </li>
+        <li *ngFor="let item of propDataNav;let i=index;">
           <a mat-button [routerLink]="'../../list/'+item.code" routerLinkActive="active">{{item.apiName}}</a>
         </li>
       </ul>

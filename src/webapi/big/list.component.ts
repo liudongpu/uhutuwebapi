@@ -108,17 +108,26 @@ export class BigList implements OnInit {
 
   processSelct(sSelect) {
 
+    let aArr = [];
 
     if (!(sSelect && this.propMapGroup.has(sSelect))) {
 
-      sSelect = this.propDataNav[0].code;
+      //sSelect = this.propDataNav[0].code;
+
+      this.propDataNav.forEach(fItem => {
+        aArr = aArr.concat(this.propMapGroup.get(fItem.code));
+      })
+
+    }
+    else {
+      aArr = this.propMapGroup.get(sSelect);
+
     }
 
 
 
 
 
-    let aArr = this.propMapGroup.get(sSelect);
 
 
 
