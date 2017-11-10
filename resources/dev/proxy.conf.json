@@ -1,0 +1,9 @@
+{
+    "/zoocs": {
+      "target": "http://localhost:2677",
+       
+      "changeOrigin": true,
+      "secure": false
+    }
+  }
+  
