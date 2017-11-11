@@ -8,16 +8,34 @@
     .c_left{
         width: 20%;
         padding: 20px;
-        a{color: #333333;}
-        .active{
-            background-color: #A9C1D6;
-            color: #032D63;
+        
+        
+        ul{
+            list-style-type: none;
+            padding: 0px;
+            margin: 0px;
+            li{
+                line-height: 30px;
+                a{
+                    background-color:$define_color_bg_primary;
+                    display: block;
+                    color: #333333;
+                }
+
+                .active{
+                    background-color: #A9C1D6;
+                    color: #032D63;
+                }
+            }
         }
     }
 
     .c_center{
         padding:20px;
         flex: 1;
+        a{
+            color: #004B8B;
+        }
     }
 
 
@@ -26,17 +44,6 @@
     }
 
 
-    ul{
-        list-style-type: none;
-        padding: 0px;
-        margin: 0px;
-        li{
-            line-height: 30px;
-            a{
-                background-color:$define_color_bg_primary;
-                display: block;
-            }
-        }
-    }
+    
 
 }

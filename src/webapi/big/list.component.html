@@ -19,7 +19,8 @@
 
           <ng-container matColumnDef="apiClass">
             <mat-header-cell *matHeaderCellDef class="c_name">API函数</mat-header-cell>
-            <mat-cell *matCellDef="let element" class="c_name"> {{element.apiClass}} </mat-cell>
+            <mat-cell *matCellDef="let element" class="c_name"> 
+              <a [routerLink]="'../../info/'+element.code">{{element.apiClass}}</a> </mat-cell>
           </ng-container>
 
           <ng-container matColumnDef="apiName">
