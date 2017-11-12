@@ -11,7 +11,7 @@ export class ServiceHttp {
 
 
 
-    upPostData<T>(sApiName: string, oInput: any): Promise<T> {
+    upPostData<Tinput,Tresut>(sApiName: string, oInput: Tinput): Promise<Tresut> {
 
 
 
@@ -22,7 +22,7 @@ export class ServiceHttp {
 
         aData.push("apiInput=" + encodeURIComponent(JSON.stringify(oInput)));
 
-        let promise = new Promise<T>((resolve, reject) => {
+        let promise = new Promise<Tresut>((resolve, reject) => {
 
             this.httpClient.post('zoocs/web/api/manage', aData.join('&'), {
                 headers: {

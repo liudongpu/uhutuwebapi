@@ -2,12 +2,12 @@ import { ServiceHttp } from './../service/http.service';
 import { Component, OnInit } from '@angular/core';
 import { MatTableDataSource } from '@angular/material';
 import * as AirFaceHttp from '../../air/face/http';
-import { Router, ActivatedRoute, ParamMap } from '@angular/router';
+import {  ActivatedRoute, ParamMap } from '@angular/router';
 
 @Component({ templateUrl: "./list.component.html" })
-export class BigList implements OnInit {
+export class CommonList implements OnInit {
 
-  constructor(private serviceHttp: ServiceHttp, private route: ActivatedRoute, private router: Router) { }
+  constructor(private serviceHttp: ServiceHttp, private route: ActivatedRoute) { }
 
   propDataNav: AirFaceHttp.IZwApiGroup[] = []
 
@@ -27,7 +27,7 @@ export class BigList implements OnInit {
 
   ngOnInit() {
 
-    this.serviceHttp.upPostData<AirFaceHttp.IFitListResult>('com.uhutu.zooweb.api.fit.FitList', {}).then(data => {
+    this.serviceHttp.upPostData<{},AirFaceHttp.IFitListResult>('com.uhutu.zooweb.api.fit.FitList', {}).then(data => {
 
       this.processData(data);
 

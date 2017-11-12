@@ -6,9 +6,9 @@ import {MatButtonModule, MatButtonToggleModule,MatTableModule,MatGridListModule,
 
 import {LayoutMain} from './layout/main.component';
 
-import {BigList} from './big/list.component';
+import {CommonList} from './common/list.component';
 import {BigFront} from './big/front.component';
-import {InfoApi} from './info/api.component';
+import {CommonInfo} from './common/info.component';
 
 import {ServiceHttp} from './service/http.service';
 
@@ -20,15 +20,15 @@ const crisisCenterRoutes : Routes = [
       
       {
         path: 'list/:code',
-        component:BigList
+        component:CommonList
       },
       {
         path:'big/front',
         component:BigFront
       },
       {
-        path:'info/:api',
-        component:InfoApi
+        path:'info/:code',
+        component:CommonInfo
       }
     ]
 
@@ -36,7 +36,7 @@ const crisisCenterRoutes : Routes = [
 ];
 
 @NgModule({
-  declarations: [LayoutMain,BigList,BigFront,InfoApi],
+  declarations: [LayoutMain,CommonList,BigFront,CommonInfo],
   providers: [ServiceHttp],
   entryComponents: [],
   imports: [
