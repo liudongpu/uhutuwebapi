@@ -5,6 +5,10 @@ export interface IRootApiInput {
 //create by reflect from com.uhutu.zooweb.model.ApiStructClass
 export interface IApiStructClass {
 className:string
+/**
+ * 唯一标记
+ */
+uniqueCode:string
 classFields:IApiStructField[]
 }
 //create by reflect from com.uhutu.zoocom.model.MResult
@@ -88,4 +92,8 @@ export interface IApiStructField {
 fieldName:string
 fieldType:string
 fieldClass:string
+/**
+ * 唯一标记
+ */
+uniqueCode:string
 }

@@ -1,0 +1,26 @@
+<mat-table #table [dataSource]="propDataSource">
+
+    <ng-container matColumnDef="fieldName">
+        <mat-header-cell *matHeaderCellDef class="c_name">字段名称</mat-header-cell>
+        <mat-cell *matCellDef="let element" class="c_name">
+            <a>{{element.fieldName}}</a>
+        </mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="fieldType">
+        <mat-header-cell *matHeaderCellDef> 字段类型 </mat-header-cell>
+        <mat-cell *matCellDef="let element"> 
+            <a *ngIf="element.fieldClass"  [routerLink]="" preserveFragment="false" fragment="type_{{element.uniqueCode}}">{{element.fieldType}} </a>
+            <span *ngIf="!element.fieldClass">{{element.fieldType}} </span>
+           
+        </mat-cell>
+    </ng-container>
+
+
+
+
+
+
+    <mat-header-row *matHeaderRowDef="propDisplayedColumns"></mat-header-row>
+    <mat-row *matRowDef="let row; columns: propDisplayedColumns;"></mat-row>
+</mat-table>

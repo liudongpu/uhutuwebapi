@@ -19,7 +19,7 @@ export class CheckComponent implements OnInit {
       } else {
         this
           .router
-          .navigate(['/pages/webapi/big/list'])
+          .navigate(['/pages/webapi/list/list'])
       }
      
 

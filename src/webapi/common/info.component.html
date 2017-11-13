@@ -1,6 +1,57 @@
-<div *ngIf="propStructInfo">
+<div class="theme_page_common_info">
+<a href="pages/webapi/info/dzag4699100110021001#type_1">aaa</a>
+    <div class="c_left">
+        {{propStructInfo.structGroup.apiName}}
 
 
-    {{propStructInfo.structGroup.apiName}}
+        <div class="c_title">
+            请求参数
+
+
+        </div>
+        <div class="c_table">
+            <uwb-sub-table [inputFields]="propStructInfo.structInput.classFields"></uwb-sub-table>
+        </div>
+        <div class="c_title">
+
+            响应参数
+
+        </div>
+
+        <div class="c_table">
+
+
+            <uwb-sub-table [inputFields]="propStructInfo.structResult.classFields"></uwb-sub-table>
+
+
+        </div>
+
+
+        <div>
+            <div *ngFor="let item of propStructInfo.structList">
+
+                <div class="c_title" id="type_{{item.uniqueCode}}">
+
+                    结构体{{item.className}}
+
+                </div>
+
+                <div class="c_table">
+
+
+                    <uwb-sub-table [inputFields]="item.classFields"></uwb-sub-table>
+
+
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+    <div class="c_right">
+
+    </div>
+
+
 
 </div>

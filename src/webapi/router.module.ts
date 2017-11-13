@@ -1,8 +1,9 @@
+import { SubTable } from './sub/table.component';
 import {NgModule} from '@angular/core';
 import {RouterModule, Routes} from '@angular/router';
 import {BrowserModule} from '@angular/platform-browser';
 import {HttpClientModule} from '@angular/common/http';
-import {MatButtonModule, MatButtonToggleModule,MatTableModule,MatGridListModule, MatTabsModule,MatCheckboxModule, MatListModule, MatIconModule} from '@angular/material';
+import {MatButtonModule, MatButtonToggleModule,MatTableModule,MatGridListModule,MatCardModule, MatTabsModule,MatCheckboxModule, MatListModule, MatIconModule} from '@angular/material';
 
 import {LayoutMain} from './layout/main.component';
 
@@ -11,6 +12,7 @@ import {BigFront} from './big/front.component';
 import {CommonInfo} from './common/info.component';
 
 import {ServiceHttp} from './service/http.service';
+import {ServiceInfo} from './service/info.service';
 
 const crisisCenterRoutes : Routes = [
   {
@@ -28,6 +30,9 @@ const crisisCenterRoutes : Routes = [
       },
       {
         path:'info/:code',
+        resolve: {
+          crisis: ServiceInfo
+        },
         component:CommonInfo
       }
     ]
@@ -36,9 +41,9 @@ const crisisCenterRoutes : Routes = [
 ];
 
 @NgModule({
-  declarations: [LayoutMain,CommonList,BigFront,CommonInfo],
-  providers: [ServiceHttp],
-  entryComponents: [],
+  declarations: [LayoutMain,CommonList,BigFront,CommonInfo,SubTable],
+  providers: [ServiceHttp,ServiceInfo],
+  entryComponents: [SubTable],
   imports: [
     RouterModule.forChild(crisisCenterRoutes),
     MatButtonModule,
@@ -49,6 +54,7 @@ const crisisCenterRoutes : Routes = [
     MatButtonToggleModule,
     MatListModule,
     MatIconModule,
+    MatCardModule,
     BrowserModule
   ],
   exports: [RouterModule]

@@ -11,21 +11,29 @@ export class CommonInfo implements OnInit {
 
     propStructInfo: AirFaceHttp.IApiStructInfo;
 
+
+    propDisplayedColumns=["fieldName","fieldType"];
+
     constructor(private serviceHttp: ServiceHttp, private route: ActivatedRoute) { }
 
 
     ngOnInit() {
-        this.route.paramMap.subscribe((params: ParamMap) => {
 
 
-            let sCode = params.get('code');
+        this
+        .route
+        .data
+        .subscribe((data : {
+          crisis:  AirFaceHttp.IFitInfoResult
+        }) => {
+  
+          this.propStructInfo=data.crisis.structInfo;
 
-            this.serviceHttp.upPostData<AirFaceHttp.IFitInfoInput, AirFaceHttp.IFitInfoResult>('com.uhutu.zooweb.api.fit.FitInfo', { apiCode: sCode }).then(data => {
-
-                this.propStructInfo = data.structInfo;
-            });
 
         });
+
+
+        
 
     }
 
