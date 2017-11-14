@@ -2,8 +2,10 @@ import { SubTable } from './sub/table.component';
 import {NgModule} from '@angular/core';
 import {RouterModule, Routes} from '@angular/router';
 import {BrowserModule} from '@angular/platform-browser';
+import {FormsModule,ReactiveFormsModule} from '@angular/forms';
+
 import {HttpClientModule} from '@angular/common/http';
-import {MatButtonModule, MatButtonToggleModule,MatTableModule,MatGridListModule,MatCardModule, MatTabsModule,MatCheckboxModule, MatListModule, MatIconModule} from '@angular/material';
+import {MatButtonModule, MatButtonToggleModule,MatSelectModule,MatInputModule,MatTableModule,MatFormFieldModule,MatGridListModule,MatCardModule, MatTabsModule,MatCheckboxModule, MatListModule, MatIconModule} from '@angular/material';
 
 import {LayoutMain} from './layout/main.component';
 
@@ -46,16 +48,21 @@ const crisisCenterRoutes : Routes = [
   entryComponents: [SubTable],
   imports: [
     RouterModule.forChild(crisisCenterRoutes),
+    FormsModule,
+    ReactiveFormsModule,
     MatButtonModule,
     MatGridListModule,
     HttpClientModule,
     MatTableModule,
     MatTabsModule,
     MatButtonToggleModule,
+    MatFormFieldModule,
+    MatInputModule,
     MatListModule,
     MatIconModule,
     MatCardModule,
-    BrowserModule
+    BrowserModule,
+    MatSelectModule
   ],
   exports: [RouterModule]
 })

@@ -58,6 +58,13 @@ za:string
 zc:string
 zu:string
 }
+//create by reflect from com.uhutu.zoocom.root.RootApiResult
+export interface IRootApiResult extends IMResult {
+}
+//create by reflect from com.uhutu.zoodata.dbbase.BaseEntityForCode
+export interface IBaseEntityForCode extends IBaseEntity {
+code:string
+}
 //create by reflect from com.uhutu.zooweb.model.ApiStructInfo
 export interface IApiStructInfo {
 /**
@@ -69,16 +76,15 @@ structResult:IApiStructClass
 structGroup:IZwApiGroup
 structList:IApiStructClass[]
 }
-//create by reflect from com.uhutu.zoocom.root.RootApiResult
-export interface IRootApiResult extends IMResult {
+//create by reflect from com.uhutu.zooweb.model.ApiParamInfo
+export interface IApiParamInfo {
+apiMethod:string
+apiInput:string
+apiToken:string
 }
 //create by reflect from com.uhutu.zooweb.api.fit.FitListResult
 export interface IFitListResult extends IRootApiResult {
 groups:IZwApiGroup[]
-}
-//create by reflect from com.uhutu.zoodata.dbbase.BaseEntityForCode
-export interface IBaseEntityForCode extends IBaseEntity {
-code:string
 }
 //create by reflect from com.uhutu.zooweb.api.fit.FitInfoInput
 export interface IFitInfoInput extends IRootApiInput {

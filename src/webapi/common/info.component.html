@@ -1,5 +1,8 @@
 <div class="theme_page_common_info">
     <div class="c_left">
+
+        <button [routerLink]="'../../list/'+propStructInfo.structGroup.parentCode" mat-raised-button color="primary">返回列表</button>
+
         {{propStructInfo.structGroup.apiClass}}{{propStructInfo.structGroup.apiName}}
 
 
@@ -48,6 +51,30 @@
 
     </div>
     <div class="c_right">
+        <form [formGroup]="options">
+
+            <mat-form-field class="c_field">
+
+                <input formControlName="apiMethod" matInput placeholder="请求接口" />
+            </mat-form-field>
+
+            <mat-form-field class="c_field">
+
+                <textarea formControlName="apiInput" matInput placeholder="输入参数" matTextareaAutosize matAutosizeMinRows="1" matAutosizeMaxRows="15"></textarea>
+            </mat-form-field>
+
+            <button (click)="processClick()" mat-raised-button color="accent">调用接口</button>
+        </form>
+
+
+        
+            <div class="c_field">
+                <textarea class="c_result" rows="10">{{propApiResult}}</textarea>
+                
+            </div>
+       
+
+       
 
     </div>
 
