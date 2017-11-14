@@ -23,8 +23,8 @@
                 }
 
                 .active{
-                    background-color: #A9C1D6;
-                    color: #032D63;
+                    background-color: #F2C3E2;
+                    color: #C8338A;
                 }
             }
         }
@@ -34,7 +34,7 @@
         padding:20px;
         flex: 1;
         a{
-            color: #004B8B;
+            color: #DC4FAD;
         }
     }
 
@@ -64,7 +64,8 @@
 
     .c_title{
 
-        background-color: #E6EDF3;
+        
+        background-color: rgba(192, 150, 190, 0.12);
         line-height: 40px;
         padding-left: 10px;
         margin-top: 20px;
@@ -72,6 +73,11 @@
     .c_table{
         border-left:solid 1px  rgba(0,0,0,.12);
         border-right:solid 1px  rgba(0,0,0,.12);
+
+        a{
+            color: #DC4FAD;
+            
+        }
         
     }
 }

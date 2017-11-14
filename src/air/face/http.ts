@@ -96,4 +96,12 @@ fieldClass:string
  * 唯一标记
  */
 uniqueCode:string
+/**
+ * 字段中文
+ */
+fieldNote:string
+/**
+ * 备注信息
+ */
+filedRemark:string
 }

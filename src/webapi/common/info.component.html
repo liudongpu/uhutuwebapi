@@ -1,7 +1,6 @@
 <div class="theme_page_common_info">
-<a href="pages/webapi/info/dzag4699100110021001#type_1">aaa</a>
     <div class="c_left">
-        {{propStructInfo.structGroup.apiName}}
+        {{propStructInfo.structGroup.apiClass}}{{propStructInfo.structGroup.apiName}}
 
 
         <div class="c_title">
@@ -10,7 +9,7 @@
 
         </div>
         <div class="c_table">
-            <uwb-sub-table [inputFields]="propStructInfo.structInput.classFields"></uwb-sub-table>
+            <uwb-sub-table [inputFields]="propStructInfo.structInput.classFields" [inputUrl]="propUrl"></uwb-sub-table>
         </div>
         <div class="c_title">
 
@@ -21,7 +20,7 @@
         <div class="c_table">
 
 
-            <uwb-sub-table [inputFields]="propStructInfo.structResult.classFields"></uwb-sub-table>
+            <uwb-sub-table [inputFields]="propStructInfo.structResult.classFields" [inputUrl]="propUrl"></uwb-sub-table>
 
 
         </div>
@@ -39,7 +38,7 @@
                 <div class="c_table">
 
 
-                    <uwb-sub-table [inputFields]="item.classFields"></uwb-sub-table>
+                    <uwb-sub-table [inputFields]="item.classFields" [inputUrl]="propUrl"></uwb-sub-table>
 
 
                 </div>
