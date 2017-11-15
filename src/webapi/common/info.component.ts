@@ -47,14 +47,33 @@ export class CommonInfo implements OnInit {
           'apiInput': sInputJson,
           'apiToken': '',
           'apiKey': '',
-          'apiSecret': '',
+          'apiSecret': ''
         };
+
+        let sLocalCache = localStorage.getItem('webapi_common_info');
+        if (sLocalCache) {
+          oValue = Object.assign(oValue, JSON.parse(sLocalCache));
+        }
 
         this.options = this
           .fb
           .group(oValue);
 
       });
+
+  }
+
+  saveLocalClick() {
+
+    let oValue = this.options.value;
+
+    let oSave = {
+      apiToken: oValue.apiToken,
+      apiKey: oValue.apiKey,
+      apiSecret: oValue.apiSecret
+    }
+
+    localStorage.setItem('webapi_common_info', JSON.stringify(oSave));
 
   }
 

@@ -77,6 +77,8 @@
                 </mat-tab>
                 <mat-tab label="高级参数">
                     <div class="c_tab">
+                        
+                            
                         <mat-form-field class="c_field">
 
                             <input formControlName="apiToken" matInput placeholder="用户授权码" />
@@ -89,6 +91,11 @@
 
                             <input formControlName="apiSecret" matInput placeholder="调用方Secret" />
                         </mat-form-field>
+                        <div class="c_save">
+                                <button mat-button color="primary" (click)="saveLocalClick()">保存到浏览器缓存</button>
+                        </div>
+                       
+
                     </div>
 
                 </mat-tab>
