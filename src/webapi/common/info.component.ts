@@ -42,9 +42,17 @@ export class CommonInfo implements OnInit {
 
         let sInputJson = JSON.stringify(oInput, null, 4);
 
+        let oValue = {
+          'apiMethod': this.propStructInfo.structGroup.apiClass,
+          'apiInput': sInputJson,
+          'apiToken': '',
+          'apiKey': '',
+          'apiSecret': '',
+        };
+
         this.options = this
           .fb
-          .group({'apiMethod': this.propStructInfo.structGroup.apiClass, 'apiInput': sInputJson, 'apiToken': ''});
+          .group(oValue);
 
       });
 
@@ -54,7 +62,7 @@ export class CommonInfo implements OnInit {
 
     let oValue : AirFaceHttp.IApiParamInfo = this.options.value;
 
-    this.propApiResult='';
+    this.propApiResult = '';
     this
       .serviceHttp
       .justCallApi(oValue)

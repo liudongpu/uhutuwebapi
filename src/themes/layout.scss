@@ -1,6 +1,16 @@
 @import 'define.scss';
 
 
+
+
+.theme_base_a{
+    color: $define_base_a_color;
+}
+
+.theme_base_a:hover{
+    color: $define_base_a_color_hover;
+}
+
 .theme_layout_main{
     display: flex;
     flex-direction:column;
@@ -15,6 +25,9 @@
     display: flex;
     .c_logo{
         flex:1;
+        display: flex;
+        align-items: center;
+        justify-content: center;
     }
     .c_nav{
         flex: 7;

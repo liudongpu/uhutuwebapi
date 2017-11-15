@@ -10,7 +10,7 @@
     <ng-container matColumnDef="fieldType">
         <mat-header-cell *matHeaderCellDef> 字段类型 </mat-header-cell>
         <mat-cell *matCellDef="let element">
-            <a *ngIf="element.fieldClass" href="{{inputUrl}}#type_{{element.uniqueCode}}">{{element.fieldType}} </a>
+            <a *ngIf="element.fieldClass" class="theme_base_a" href="{{inputUrl}}#type_{{element.uniqueCode}}">{{element.fieldType}} </a>
             <span *ngIf="!element.fieldClass">{{element.fieldType}} </span>
 
         </mat-cell>

@@ -34,9 +34,7 @@
     .c_center{
         padding:20px;
         flex: 1;
-        a{
-            color: $define_base_a_color;
-        }
+         
     }
 
 
@@ -80,15 +78,25 @@
         border-left:solid 1px  $define_base_border_color;
         border-right:solid 1px  $define_base_border_color;
 
-        a{
-            color: $define_base_a_color;
-            
-        }
+        
         
     }
 
     .c_result{
         width: 100%;
         margin-top: 30px;
+        border: solid 1px $define_header_bg_color;
+    }
+
+    .c_desc{
+        line-height: 20px;
+        padding: 10px;
+        font-size: 12px;
+        color: $define_base_desc_color;
+    }
+
+
+    .c_tab{
+        padding-top: 20px;
     }
 }

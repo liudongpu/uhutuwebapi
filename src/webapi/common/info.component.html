@@ -1,10 +1,9 @@
 <div class="theme_page_common_info">
     <div class="c_left">
 
-        <button [routerLink]="'../../list/'+propStructInfo.structGroup.parentCode" mat-raised-button color="primary">返回列表</button>
 
-        {{propStructInfo.structGroup.apiClass}}{{propStructInfo.structGroup.apiName}}
-
+        {{propStructInfo.structGroup.apiClass}}({{propStructInfo.structGroup.apiName}}) &nbsp; &nbsp;
+        <a class="theme_base_a" [routerLink]="'../../list/'+propStructInfo.structGroup.parentCode">返回列表</a>
 
         <div class="c_title">
             请求参数
@@ -26,6 +25,11 @@
             <uwb-sub-table [inputFields]="propStructInfo.structResult.classFields" [inputUrl]="propUrl"></uwb-sub-table>
 
 
+        </div>
+
+        <div class="c_desc">
+            status：通用返回参数，读取结果前需要判断此参数是否为1，当此参数为1时为正确响应，为801时是标记用户授权失败，为三位数字编码时为http请求状态异常，其他参考error字段信息描述
+            <br/> error：通用返回参数，当status不为1时可显示此错误信息
         </div>
 
 
@@ -53,28 +57,59 @@
     <div class="c_right">
         <form [formGroup]="options">
 
-            <mat-form-field class="c_field">
 
-                <input formControlName="apiMethod" matInput placeholder="请求接口" />
-            </mat-form-field>
+            <mat-tab-group>
+                <mat-tab label="基本参数">
+                    <div class="c_tab">
 
-            <mat-form-field class="c_field">
 
-                <textarea formControlName="apiInput" matInput placeholder="输入参数" matTextareaAutosize matAutosizeMinRows="1" matAutosizeMaxRows="15"></textarea>
-            </mat-form-field>
+                        <mat-form-field class="c_field">
+
+                            <textarea formControlName="apiInput" matInput placeholder="接口{{options.value.apiMethod}}的输入参数" matTextareaAutosize matAutosizeMinRows="1"
+                                matAutosizeMaxRows="15"></textarea>
+                        </mat-form-field>
+
+
+
+
+
+                    </div>
+                </mat-tab>
+                <mat-tab label="高级参数">
+                    <div class="c_tab">
+                        <mat-form-field class="c_field">
+
+                            <input formControlName="apiToken" matInput placeholder="用户授权码" />
+                        </mat-form-field>
+                        <mat-form-field class="c_field">
+
+                            <input formControlName="apiKey" matInput placeholder="调用方Key" />
+                        </mat-form-field>
+                        <mat-form-field class="c_field">
+
+                            <input formControlName="apiSecret" matInput placeholder="调用方Secret" />
+                        </mat-form-field>
+                    </div>
+
+                </mat-tab>
+            </mat-tab-group>
+
+
+
+
 
             <button (click)="processClick()" mat-raised-button color="accent">调用接口</button>
         </form>
 
 
-        
-            <div class="c_field">
-                <textarea class="c_result" rows="10">{{propApiResult}}</textarea>
-                
-            </div>
-       
 
-       
+        <div class="c_field">
+            <textarea class="c_result" rows="20">{{propApiResult}}</textarea>
+
+        </div>
+
+
+
 
     </div>
 
