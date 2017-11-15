@@ -14,7 +14,7 @@ import { WebapiRouterModule } from '../webapi/router.module';
 
 const routes: Routes = [
   { path: '', component:CheckComponent, pathMatch: 'full' },
-  
+  { path: '**', component:CheckComponent },
   
 ];
 

@@ -36,7 +36,7 @@ export class ServiceHttp {
 
             this
                 .httpClient
-                .post('zoocs/web/api/manage', aData.join('&'), {
+                .post('/zoocs/web/api/manage', aData.join('&'), {
                     headers: {
                         'Content-Type': 'application/x-www-form-urlencoded'
                     }

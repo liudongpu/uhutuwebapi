@@ -9,7 +9,8 @@
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "dev": "ng server  --proxy-config resources/dev/proxy.conf.json"
+    "dev": "ng server  --proxy-config resources/dev/proxy.conf.json",
+    "build-product": "ng build --target=production --environment=prod --build-optimizer --base-href /opendoc/"
   },
   "private": true,
   "dependencies": {

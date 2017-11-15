@@ -5,7 +5,7 @@ import {BrowserModule} from '@angular/platform-browser';
 import {FormsModule,ReactiveFormsModule} from '@angular/forms';
 
 import {HttpClientModule} from '@angular/common/http';
-import {MatButtonModule, MatButtonToggleModule,MatCheckboxModule,MatSelectModule,MatInputModule,MatTableModule,MatFormFieldModule,MatGridListModule,MatCardModule, MatTabsModule,MatCheckboxModule, MatListModule, MatIconModule} from '@angular/material';
+import {MatButtonModule, MatButtonToggleModule,MatSelectModule,MatInputModule,MatTableModule,MatFormFieldModule,MatGridListModule,MatCardModule, MatTabsModule,MatCheckboxModule, MatListModule, MatIconModule} from '@angular/material';
 
 import {LayoutMain} from './layout/main.component';
 
