@@ -18,7 +18,7 @@ import {ServiceInfo} from './service/info.service';
 
 const crisisCenterRoutes : Routes = [
   {
-    path: 'pages/webapi',
+    path: 'fitapi',
     component: LayoutMain,
     children: [
       
