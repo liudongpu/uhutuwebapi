@@ -20,6 +20,9 @@ export class CommonInfo implements OnInit {
 
   ngOnInit() {
 
+
+    
+
     this
       .activeRoute
       .data
@@ -27,7 +30,7 @@ export class CommonInfo implements OnInit {
         crisis: AirFaceHttp.IFitInfoResult
       }) => {
 
-        this.propUrl = this.router.url;
+        this.propUrl = location.pathname;
         this.propStructInfo = data.crisis.structInfo;
 
         let oInput = {};

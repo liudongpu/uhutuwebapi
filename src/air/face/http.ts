@@ -4,7 +4,14 @@ export interface IRootApiInput {
 }
 //create by reflect from com.uhutu.zooweb.model.ApiStructClass
 export interface IApiStructClass {
+/**
+ * 关联类
+ */
 className:string
+/**
+ * 缩写
+ */
+shortName:string
 /**
  * 唯一标记
  */
@@ -15,7 +22,7 @@ classFields:IApiStructField[]
 export interface IMResult {
 /**
  * 状态标记 
- * 默认值为1，不为1时表示出现错误  ,如果返回值为61时表示需要用户登陆
+ * 1为正确 其他为错误响应
  */
 status:number
 /**

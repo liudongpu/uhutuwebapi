@@ -19,7 +19,7 @@ export class CheckComponent implements OnInit {
       } else {
         this
           .router
-          .navigate(['/fitapi/list/list'])
+          .navigate(['fitapi/list/list'])
       }
      
 
