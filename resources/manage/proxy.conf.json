@@ -1,0 +1,9 @@
+{
+    "/zoocs": {
+      "target": "http://op-man-2677.sww.srnpr.com",
+       
+      "changeOrigin": true,
+      "secure": false
+    }
+  }
+  
